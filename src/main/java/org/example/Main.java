@@ -12,33 +12,16 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner entradaTeclado= new Scanner(System.in);
-
-
         Afiliado afiliado= new Afiliado();
 
-        afiliado.setId(123121);
-        afiliado.setApellidos("guitierrez");
-        afiliado.setCiudad(2);
-        afiliado.setDocumento("1231245");
-        afiliado.setDepartamento(4);
-        afiliado.setCorreoElectronico("tacataca@gamil.com");
-        afiliado.setFechaNacimiento(LocalDate.from(LocalDateTime.now()));
-        afiliado.setTelefono("123 1298312");
+        System.out.println("Digite el id del Usuario: ");
+        afiliado.setId(entradaTeclado.nextInt());
 
-        Signovital signovital= new Signovital();
+        System.out.println("Digite el nombre del usuario: ");
+        afiliado.setNombres(entradaTeclado.nextLine());
 
-        signovital.setId(13124);
-        signovital.setFecha(LocalDateTime.now());
-        signovital.setMaximoNormal(18.0);
-        signovital.setNombre("Gabriela");
-        signovital.setMinimoNormal(48.0);
-        signovital.setUnidadMedida(33);
+        System.out.println("Digite el documento del usuario: ");
+        afiliado.setDocumento(entradaTeclado.nextLine());
 
-        Examenesgenerales examenesgenerales=new Examenesgenerales();
-
-        examenesgenerales.setId(2342);
-        examenesgenerales.setFechaExamen(LocalDateTime.now());
-        examenesgenerales.setImagenExamen("esta es una imagen");
-        examenesgenerales.setNombreExamen("colonoscopia");
     }
 }

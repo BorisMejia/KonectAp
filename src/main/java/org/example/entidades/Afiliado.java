@@ -92,7 +92,13 @@ public class    Afiliado {
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+
+        try {
+            this.validacionAfiliado.validarApellido(apellidos);
+            this.apellidos=apellidos;
+        }catch (Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public LocalDate getFechaNacimiento() {
@@ -108,30 +114,44 @@ public class    Afiliado {
     }
 
     public void setCiudad(Integer ciudad) {
-        this.ciudad = ciudad;
+        try {
+            this.validacionAfiliado.validarCiudad(ciudad.toString());
+            this.ciudad = ciudad;
+        } catch (Exception error) {
+            System.out.println(error.getMessage());
+        }
     }
 
     public Integer getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(Integer departamento) {
-        this.departamento = departamento;
-    }
+        public void setDepartamento(Integer departamento) {
+
+            try {
+                this.validacionAfiliado.validarDepartamento(departamento.toString());
+                this.departamento=departamento;
+            }catch (Exception error){
+                System.out.println(error.getMessage());
+            }
+
+
+        }
 
     public String getCorreoElectronico() {
         return correoElectronico;
     }
-
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-
     public String getTelefono() {
         return telefono;
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+
+        try {
+            this.validacionAfiliado.validarTelefono(telefono);
+            this.telefono=telefono;
+        }catch (Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 }
